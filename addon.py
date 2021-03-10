@@ -155,7 +155,7 @@ def populateImages(imgs):
 			thumb = img['element_url']
 		except:
 			thumb = img['derivatives']['xxlarge']['url']
-		plugin.addDirectoryItem(url=thumb, listitem=listitem)
+		plugin.addDirectoryItem(url=thumb.replace(' ', '%20'), listitem=listitem)
 	if(int(plugin.getSetting('limit')) <= int(imgs['paging']['count'])) :
 		nextString = '> %s' % (__addon__.getLocalizedString(33115))
 		nextCount = plugin.getSetting('limit')
